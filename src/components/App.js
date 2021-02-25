@@ -30,13 +30,13 @@ const App = () =>
 
     const [selectedMonth, setSelectedMonth] = useState(new Date())
 
-    const [data, setData] = useState({})
+    const [data, setData] = useState([])
     useEffect(() => 
     {
 
         fetch(`https://central.wordcamp.org/wp-json/wp/v2/wordcamps`)
         .then(res => res.json())
-        .then((resData) => {console.log(resData)})
+        .then((resData) => {setData(resData)})
 
     }, [])
 
@@ -72,7 +72,6 @@ const App = () =>
           matrix.push(week)
         }
       
-        console.log(matrix)
         return matrix
     }
 
@@ -85,7 +84,7 @@ const App = () =>
                 <h1>{format(selectedMonth, dateFormat)}</h1>
                 <Toggle><b onClick={ nextMonth }>{'>'}</b></Toggle>
             </SelectMonth>
-            <Calendar month={ selectedMonth } matrix={ createMatrix() } ></Calendar>
+            <Calendar month={ selectedMonth } matrix={ createMatrix() } events={ data } ></Calendar>
             <div></div>
         </App>
     )

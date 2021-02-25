@@ -18,13 +18,13 @@ const WeeksLabel = () =>
 
     return (
         <WeeksLabel>
+            <Label>Sunday</Label>
             <Label>Monday</Label>
             <Label>Tuesday</Label>
             <Label>Wednesday</Label>
             <Label>Thursday</Label>
             <Label>Friday</Label>
             <Label>Saturday</Label>
-            <Label>Sunday</Label>
         </WeeksLabel>
     )
 

@@ -8,7 +8,7 @@ const Week = (props) =>
 {
 
     const Week = styled.div`
-        height: calc(100% / 6);
+        height: calc(100% / ${props.numWeeks});
         width: 100%;
         display: flex;
         justify-content: center;
@@ -18,13 +18,13 @@ const Week = (props) =>
 
     return (
         <Week>
-            <Day day={ props.week[0] } />
-            <Day day={ props.week[1] } />
-            <Day day={ props.week[2] } />
-            <Day day={ props.week[3] } />
-            <Day day={ props.week[4] } />
-            <Day day={ props.week[5] } />
-            <Day day={ props.week[6] } />
+            <Day events={ props.events } month={ props.month } day={ props.week[0] } />
+            <Day events={ props.events } month={ props.month } day={ props.week[1] } />
+            <Day events={ props.events } month={ props.month } day={ props.week[2] } />
+            <Day events={ props.events } month={ props.month } day={ props.week[3] } />
+            <Day events={ props.events } month={ props.month } day={ props.week[4] } />
+            <Day events={ props.events } month={ props.month } day={ props.week[5] } />
+            <Day events={ props.events } month={ props.month } day={ props.week[6] } />
         </Week>
     )
 
