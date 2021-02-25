@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import WeeksLabel from './WeeksLabel'
 import Week from './Week'
 
-const Calendar = () => 
+const Calendar = (props) => 
 {
 
     const Calendar = styled.div`
@@ -24,13 +24,13 @@ const Calendar = () =>
 
             <WeeksLabel />
             <Weeks>
-                <Week />
-                <Week />
-                <Week />
-                <Week />
-                <Week />
+                <Week week={ props.matrix[0] } />
+                <Week week={ props.matrix[1] } />
+                <Week week={ props.matrix[2] } />
+                <Week week={ props.matrix[3] } />
+                <Week week={ props.matrix[4] } />
+                <Week week={ props.matrix[5] } />
             </Weeks>
-            
         </Calendar>
     )
 
